@@ -10,14 +10,17 @@
            >{{item.label}}
            </el-button>
        </el-header>
-        <el-main></el-main>
+        <el-main>
+          <view-form></view-form>
+        </el-main>
   </el-container>
 </template>
 
 <script>
-
+import ViewForm from "@/components/ButtonView/ViewForm.vue";
 export default {
   name: "ButtonView",
+  components: {ViewForm},
   data() {
     return {
       buttons:[
@@ -69,6 +72,9 @@ export default {
   justify-content: flex-end;
   height: 45px !important;
   border-bottom: 2px solid #e4e7ed;
+  .el-button{
+    color: #b46c00;
+  }
   
 }
 </style>

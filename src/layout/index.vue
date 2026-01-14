@@ -41,9 +41,11 @@ export default {
 .my-form-container {
   height: 100%;
   .my-form-header {
+    height: 50px !important;
     box-shadow: 0 2px 10px rgba(252, 216, 70, 0.6);
     background-image: linear-gradient(to right, #FCD84699, #b46c00);
   }
+
   .my-form-view{
     border-left:  1px solid #e0e0e0;
     border-right: 1px solid #e0e0e0;
@@ -51,5 +53,18 @@ export default {
 }
 .my-form-elementcate {
   width: 250px !important;
+}
+.my-form-footer{
+  display: flex;
+  justify-content: flex-end;
+  height: 30px !important;
+  line-height: 30px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #b46c00;
+  background-color: #fafafa;
+  a{
+    color: #b46c00;
+  }
 }
 </style>

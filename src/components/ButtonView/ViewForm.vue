@@ -1,0 +1,72 @@
+<template>
+  <div>
+    <div  class="my-form-empty">从左侧拖拽添加字段</div>
+
+    <el-form
+        :size="data.config.size"
+        :label-width="data.config.labelWidth + 'px'"
+        :label-position="data.config.labelPosition"
+        :hide-required-asterisk="data.config.hideAsterisk">
+      <Draggable
+          v-model="data.list"
+          v-bind="{
+          group: 'view',
+          animation: 200,
+          ghostClass: 'move',
+          handle: '.drag-icon',
+        }">
+        <WidgetC 
+            v-for="(element,index) in data.list"
+          :key="element.key"
+        :data="data"
+        :element="element"
+        :index="index">           
+        </WidgetC>
+      </Draggable>
+    </el-form>
+
+  </div>
+</template>
+
+
+<script>
+import Draggable from "vuedraggable";
+import store from 'store/index.js'
+import WidgetC from './WidgetC.vue'
+
+export default {
+  name: "ViewForm",
+  data() {
+    return {
+      data: store.state.data
+    }
+  },
+  watch:{
+    'data.list':{
+      handler(val){
+        console.log(val);
+      },
+      deep:true
+    }
+  },
+  components: {
+    Draggable,
+    WidgetC
+  },
+  methods:{
+    handleAdd({ newIndex,item }) {
+      console.log(newIndex);
+      console.log(item); //被拖动进来的元素
+      store.commit('SET_SELECT', this.data.list[newIndex])
+    }
+  }
+}
+</script>
+<style scoped lang="scss">
+.my-form-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+</style>

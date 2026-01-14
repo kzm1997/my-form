@@ -233,10 +233,12 @@ $primary-background-color: #ecf5ff;
 }
 
 // 按钮视图
-.my-form-view {
-  > .el-container > .el-main {
+.my-form-body {
+  .el-main {
     background: #fafafa;
     position: relative;
+    margin: 0;
+   padding: 0; 
 
     &::-webkit-scrollbar {
       @include scrollbar();
@@ -413,7 +415,7 @@ $primary-background-color: #ecf5ff;
       .appear-leave-to {
         opacity: 0;
       }
-      
+
       .appear-leave-active {
         transition: all 0.5s ease;
       }
@@ -424,7 +426,7 @@ $primary-background-color: #ecf5ff;
           border-color: #dcdfe6;
         }
       }
-      
+
       .el-form-item.is-error {
         .el-date-editor {
           border-color: #dcdfe6;
@@ -594,12 +596,12 @@ $primary-background-color: #ecf5ff;
           }
         }
 
-        .hidden-label{
-          .el-checkbox__label{
+        .hidden-label {
+          .el-checkbox__label {
             width: 10px;
           }
-    
-          .el-radio__label{
+
+          .el-radio__label {
             display: inline-block;
             width: 10px;
           }
