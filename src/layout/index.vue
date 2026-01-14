@@ -5,8 +5,10 @@
         <LinkHeader></LinkHeader>
       </el-header>
 
-      <el-container>
-        <el-aside class="my-form-elementcate"></el-aside>
+      <el-container class="my-form-body">
+        <el-aside class="my-form-elementcate">
+          <ElementCate></ElementCate>
+        </el-aside>
 
 
         <el-main class="my-form-view"></el-main>
@@ -26,10 +28,10 @@
 
 <script>
 import LinkHeader from "@/layout/components/LinkHeader.vue";
-
+import ElementCate  from "@/layout/components/ElementCate.vue";
 export default {
   name: "MyForm",
-  components: {LinkHeader}
+  components: {LinkHeader,ElementCate}
 }
 </script>
 
@@ -37,9 +39,11 @@ export default {
 .my-form-container {
   height: 100%;
   .my-form-header {
-    height: 50px;
     box-shadow: 0 2px 10px rgba(252, 216, 70, 0.6);
     background-image: linear-gradient(to right, #FCD84699, #b46c00);
   }
+}
+.my-form-elementcate {
+  width: 250px !important;
 }
 </style>
