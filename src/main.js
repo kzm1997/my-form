@@ -10,6 +10,7 @@ Vue.use(ElementUI);
 import './style/index.scss'
 
 
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')

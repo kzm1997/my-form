@@ -9,9 +9,10 @@
         <el-aside class="my-form-elementcate">
           <ElementCate></ElementCate>
         </el-aside>
-
-
-        <el-main class="my-form-view"></el-main>
+        
+        <el-main class="my-form-view">
+          <button-view></button-view>
+        </el-main>
 
         <el-aside class="my-form-conf-options"></el-aside>
       </el-container>
@@ -29,9 +30,10 @@
 <script>
 import LinkHeader from "@/layout/components/LinkHeader.vue";
 import ElementCate  from "@/layout/components/ElementCate.vue";
+import ButtonView from './components/ButtonView';
 export default {
   name: "MyForm",
-  components: {LinkHeader,ElementCate}
+  components: {LinkHeader,ElementCate,ButtonView}
 }
 </script>
 
@@ -41,6 +43,10 @@ export default {
   .my-form-header {
     box-shadow: 0 2px 10px rgba(252, 216, 70, 0.6);
     background-image: linear-gradient(to right, #FCD84699, #b46c00);
+  }
+  .my-form-view{
+    border-left:  1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
   }
 }
 .my-form-elementcate {
