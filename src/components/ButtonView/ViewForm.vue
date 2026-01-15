@@ -8,6 +8,7 @@
         :hide-required-asterisk="data.config.hideAsterisk">
       <Draggable
           v-model="data.list"
+          @add="handleAdd"
           v-bind="{
           group: 'view',
           animation: 200,
@@ -40,22 +41,12 @@ export default {
       data: store.state.data
     }
   },
-  watch:{
-    'data.list':{
-      handler(val){
-        console.log(val);
-      },
-      deep:true
-    }
-  },
   components: {
     Draggable,
     WidgetC
   },
   methods:{
-    handleAdd({ newIndex,item }) {
-      console.log(newIndex);
-      console.log(item); //被拖动进来的元素
+    handleAdd({ newIndex }) {
       store.commit('SET_SELECT', this.data.list[newIndex])
     }
   }

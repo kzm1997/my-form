@@ -13,7 +13,9 @@
           <button-view></button-view>
         </el-main>
 
-        <el-aside class="my-form-conf-options"></el-aside>
+        <el-aside class="my-form-conf-options">
+          <config-option></config-option>
+        </el-aside>
       </el-container>
 
 
@@ -28,9 +30,10 @@
 import LinkHeader from "@/layout/components/LinkHeader.vue";
 import ElementCate  from "@/layout/components/ElementCate.vue";
 import ButtonView from './components/ButtonView';
+import ConfigOption from "@/layout/components/ConfigOption.vue";
 export default {
   name: "MyForm",
-  components: {LinkHeader,ElementCate,ButtonView}
+  components: {LinkHeader,ElementCate,ButtonView,ConfigOption}
 }
 </script>
 

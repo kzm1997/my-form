@@ -66,6 +66,20 @@ const base=[  {
             required: false,
             requiredMessage: '',
         },
+    },
+    {
+        type: 'button',
+        component: 'DwButton',
+        name: '按钮',
+        icon: 'icon-button',
+        options: {
+            defaultValue: '按钮',
+            type: 'primary',
+            size: 'medium',
+            disabled: false,
+            loading: false,
+            customClass: '',
+        },
     }
 ]
 
