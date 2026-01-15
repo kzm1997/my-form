@@ -4,7 +4,7 @@
            <el-button v-for="(item,index) in buttons"  
                       :key="index"
                       :type="item.type"
-                      @click="item.method"
+
                       :size="item.size" 
                       :icon="item.icon"
            >{{item.label}}

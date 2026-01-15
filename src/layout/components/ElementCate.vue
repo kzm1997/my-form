@@ -40,11 +40,11 @@ export default {
     }
   },
   mounted() {
-    console.log(this.base);
+    // console.log(this.base);
   },
   methods:{
     handleMoveClone(element){
-      console.log(element);
+      // console.log(element);
       const key=uuid();
       const el=deepClone(element);
       

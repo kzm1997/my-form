@@ -10,10 +10,9 @@ Vue.use(ElementUI);
 import './style/index.scss'
 
 
-console.log( components);
-components.forEach(item =>{
-  console.log(item);
-  // Vue.component(item.name, item)
+// 全局注册所有从 view.js 导入的组件
+Object.keys(components).forEach(key => {
+  Vue.component(key, components[key]);
 })
 
 
