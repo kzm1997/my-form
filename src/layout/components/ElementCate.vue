@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="side-container">
     <template v-if="base.length">
       <div class="element-cate-title">基础字段</div>
       <Draggable v-model="base"
                  class="base-cate-ul"
                  tag="ul"
+                 @clone="handleMoveClone"
                  v-bind="{
           group: {
             name: 'view',
@@ -27,7 +28,7 @@
 <script>
 import Draggable from 'vuedraggable'
 import {base} from '@/element/index.js'
-
+import {deepClone,uuid} from '@/utils/index'
 export default {
   name: "ElementCate",
   components: {
@@ -40,6 +41,18 @@ export default {
   },
   mounted() {
     console.log(this.base);
+  },
+  methods:{
+    handleMoveClone(element){
+      console.log(element);
+      const key=uuid();
+      const el=deepClone(element);
+      
+      return Object.assign(el,{
+        key:key,
+        model:element.type+"_"+key
+      })
+    }
   }
 }
 </script>
@@ -50,6 +63,10 @@ $primary-color: #409eff;
 $primary-color-grid: #fdf6ec;
 $primary-background-color-grid: #e6a23c;
 $primary-background-color: #ecf5ff;
+
+.side-container { 
+  height: 100%;
+}
 
 .element-cate-title {
   padding: 8px 12px;

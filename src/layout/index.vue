@@ -1,5 +1,4 @@
 <template>
-  <div>
     <el-container class="my-form-container">
       <el-header class="my-form-header">
         <LinkHeader></LinkHeader>
@@ -23,8 +22,6 @@
         <a href="https://github.com/dongwei1125/dw-form-making" target="black">dw-form-making</a>
       </el-footer>
     </el-container>
-
-  </div>
 </template>
 
 <script>
@@ -40,10 +37,21 @@ export default {
 <style scoped lang="scss">
 .my-form-container {
   height: 100%;
+  overflow: hidden;
   .my-form-header {
     height: 50px !important;
     box-shadow: 0 2px 10px rgba(252, 216, 70, 0.6);
+    padding: 0 10px;
     background-image: linear-gradient(to right, #FCD84699, #b46c00);
+    > div{
+      height: 100%;
+    }
+  }
+  .my-form-body{ 
+    height: 100%;
+    el-main{
+      height: 100%;
+    }
   }
 
   .my-form-view{
@@ -53,6 +61,10 @@ export default {
 }
 .my-form-elementcate {
   width: 250px !important;
+  height: 100%;
+  padding: 8px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 .my-form-footer{
   display: flex;

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div  class="my-form-empty">从左侧拖拽添加字段</div>
 
     <el-form
         :size="data.config.size"
@@ -68,5 +67,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  color: #ccc;
+  font-size: 20px;
 }
 </style>

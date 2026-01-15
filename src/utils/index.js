@@ -10,5 +10,11 @@ function getDefaultJson() {
     return deepClone(defaultJson)
 }
 
+function S4() {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
+}
+function uuid(){
+    return Date.now() + '_' + S4()
+}
 
-export {getDefaultJson}
+export {getDefaultJson,deepClone,uuid}

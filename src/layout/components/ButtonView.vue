@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="my-form-view-container">
        <el-header class="my-form-view-header">
            <el-button v-for="(item,index) in buttons"  
                       :key="index"
@@ -10,7 +10,7 @@
            >{{item.label}}
            </el-button>
        </el-header>
-        <el-main>
+        <el-main >
           <view-form></view-form>
         </el-main>
   </el-container>
@@ -67,11 +67,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.my-form-view-container{ 
+  height: 100%;
+  overflow: hidden;
+}
+
 .my-form-view-header{
   display: flex;
   justify-content: flex-end;
   height: 45px !important;
   border-bottom: 2px solid #e4e7ed;
+  height: 100%;
   .el-button{
     color: #b46c00;
   }
